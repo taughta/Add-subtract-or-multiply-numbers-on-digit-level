@@ -1,5 +1,7 @@
+#Write functions that add, subtract, and multiply two numbers in their digit-list representation (and return a new digit list).
+
 ####################
-##asking for numbers ##
+##Asking for numbers ##
 ####################
 inputConfirm = False
 while inputConfirm == False:
@@ -155,8 +157,6 @@ if daMethod == "multiply":
     bigCounter = 0
     multiTemp = []
 
-#
-# the length of the numbers are the same
     while multiCounterB >= (smallerNumberLength * (-1)):
         while multiCounterA >= (biggerNumberLength * (-1)):
             mTemp = ((biggerNumber[multiCounterA] * szorzo) * (smallerNumber[multiCounterB]))
@@ -168,4 +168,3 @@ if daMethod == "multiply":
         multiCounterB -= 1
         multiCounterA = (-1)
     print("The result of the two numbers multiplied is: ", numToList(sum(multiTemp)))
-

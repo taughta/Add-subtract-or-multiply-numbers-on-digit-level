@@ -29,6 +29,8 @@ while inputConfirm == False:
         defList = [int(i) for i in defList]
         return defList
 
+    subNumA = u
+    subNumB = t
     numA = numToList(u)
     numB = numToList(t)
 
@@ -78,9 +80,9 @@ else:
 smallerNumberLength = len(smallerNumber)
 biggerNumberLength = len(biggerNumber)
 
-################
-## Add method ##
-################
+#############
+## Add method
+#############
 
     ##
     #### numbers' length are the same
@@ -144,9 +146,9 @@ if daMethod == "add":
 
         print("The sum of the two numbers on digit level is: ", addedNumber)
 
-#####################
-## Multiply method ##
-#####################
+##################
+## Multiply method
+##################
 
 if daMethod == "multiply":
 
@@ -168,3 +170,45 @@ if daMethod == "multiply":
         multiCounterB -= 1
         multiCounterA = (-1)
     print("The result of the two numbers multiplied is: ", numToList(sum(multiTemp)))
+
+##################
+## Subtract Method
+##################
+
+if daMethod == "subtract":
+
+    wasItBig = False
+    isAsmaller = False
+    subtractedNumber = []
+    if numAlength < numBlength:
+        isAsmaller = True
+    subCounterA = -1
+    subCounterB = -1
+
+    #First number is smaller
+    if isAsmaller == True:
+        while subCounterA >= (numAlength * (-1)):
+            if numA[subCounterA] < numB[subCounterA]:
+                if wasItBig == True:
+                    subTemp = (numA[subCounterA] + 10) - (numB[subCounterA] + 1)
+                    subtractedNumber.insert(0, subTemp)
+                    subCounterA -= 1
+                    wasItBig = True
+                else:
+                    subTemp = (numA[subCounterA] + 10) - numB[subCounterA]
+                    subtractedNumber.insert(0, subTemp)
+                    subCounterA -= 1
+                    wasItBig = True
+            else:
+                if wasItBig == True:
+                    subTemp = (numA[subCounterA] + 10) - (numB[subCounterA] + 1)
+                    subtractedNumber.insert(0, subTemp)
+                    subCounterA -= 1
+                    wasItBig = True
+                else:
+                    subTemp = numA[subCounterA] - numB[subCounterA]
+                    subtractedNumber.insert(0, subTemp)
+                    subCounterA -= 1
+                    wasItBig = False
+
+    print(subtractedNumber)
